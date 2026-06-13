@@ -1,59 +1,167 @@
-# 🏙️ **RealEstate Research Tool**
+# 🏠 Real Estate Research Tool using RAG
 
-We are going to build a user-friendly news research tool designed for effortless information retrieval. Users can input article URLs and ask questions to receive relevant insights from the real-estate domain. (But it's features can be extended to any domain.)
-![product screenshot](resources/image.png)
-### Features
-
-- Load URLs to fetch article content.
-- Process article content through LangChain's UnstructuredURL Loader
-- Construct an embedding vector using HuggingFace embeddings and leverage ChromaDB as the vectorstore, to enable swift and effective retrieval of relevant information.
-- Interact with the LLM's (Llama3 via Groq) by inputting queries and receiving answers along with source URLs.
+An AI-powered real estate research assistant that allows users to analyze information from web URLs and ask natural language questions based on the extracted content. The application leverages Retrieval-Augmented Generation (RAG) to provide accurate, source-backed answers using modern LLM technologies.
 
 
-### Set-up
 
-1. Run the following command to install all dependencies. 
+## 🚀 Features
 
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-2. Create a .env file with your GROQ credentials as follows:
-    ```text
-    GROQ_MODEL=MODEL_NAME_HERE
-    GROQ_API_KEY=GROQ_API_KEY_HERE
-    ```
-
-3. Run the streamlit app by running the following command.
-
-    ```bash
-    streamlit run main.py
-    ```
+* 🌐 Extract information from user-provided URLs
+* 📄 Automatically load and process webpage content
+* ✂️ Split documents into semantic chunks for efficient retrieval
+* 🧠 Generate embeddings using Hugging Face Sentence Transformers
+* 🗂️ Store embeddings in ChromaDB vector database
+* 🔍 Retrieve relevant context based on user queries
+* 🤖 Generate answers using Groq's Llama 3.3 model
+* 📌 Display the original sources used to answer the question
+* 💻 Interactive Streamlit-based user interface
 
 
-### Usage/Examples
+## 🛠️ Tech Stack
 
-The web app will open in your browser after the set-up is complete.
-
-- On the sidebar, you can input URLs directly.
-
-- Initiate the data loading and processing by clicking "Process URLs."
-
-- Observe the system as it performs text splitting, generates embedding vectors using HuggingFace's Embedding Model.
-
-- The embeddings will be stored in ChromaDB.
-
-- One can now ask a question and get the answer based on those news articles
-
-- In the tutorial, we will use the following news articles
-  - https://www.cnbc.com/2024/12/21/how-the-federal-reserves-rate-policy-affects-mortgages.html
-  - https://www.cnbc.com/2024/12/20/why-mortgage-rates-jumped-despite-fed-interest-rate-cut.html
-  - https://www.cnbc.com/2024/12/17/wall-street-sees-upside-in-2025-for-these-dividend-paying-real-estate-stocks.html
+* **Python**
+* **Streamlit**
+* **LangChain**
+* **ChromaDB**
+* **Groq (Llama 3.3 70B)**
+* **Hugging Face Embeddings**
+* **Sentence Transformers**
+* **Unstructured URL Loader**
 
 
-</br>
+## ⚙️ How It Works
 
----
-Copyright (C) Codebasics Inc. All rights reserved.
+1. Enter one or more URLs containing relevant information.
+2. Click **Process URLs**.
+3. The application:
 
-Additional Terms: This software is licensed under the MIT License. However, commercial use of this software is strictly prohibited without prior written permission from the author. Attribution must be given in all copies or substantial portions of the software.
+   * Loads webpage content
+   * Splits the content into chunks
+   * Generates embeddings
+   * Stores them in ChromaDB
+4. Ask questions related to the processed URLs.
+5. Receive accurate answers along with the supporting sources.
+
+
+## 📂 Project Structure
+
+
+real_estate_genai/
+├── app.py
+├── rag.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── screenshots/
+
+
+## 📥 Installation
+
+### Clone the Repository
+
+
+git clone https://github.com/dishant1901-prog/real_estate_genai.git
+cd real_estate_genai
+
+
+### Install Dependencies
+
+
+pip install -r requirements.txt
+
+
+### Configure Environment Variables
+
+Create a `.env` file in the project root:
+
+
+GROQ_API_KEY=your_groq_api_key
+
+
+### Run the Application
+
+
+streamlit run app.py
+
+
+The application will be available at:
+
+
+http://localhost:8501
+
+
+
+## 💡 Example Usage
+
+### Input URLs
+
+
+https://www.freddiemac.com/pmms
+https://www.freddiemac.com/pmms/pmms-archives
+
+
+### Example Question
+
+Tell me what was the 30-year fixed mortgage rate along with the date?
+
+
+### Example Response
+
+
+The 30-year fixed-rate mortgage rate was 6.48% as of June 4, 2026.
+
+
+### Sources
+
+
+https://www.freddiemac.com/pmms
+https://www.freddiemac.com/pmms/pmms-archives
+
+
+
+
+## 🔒 Security
+
+API keys and sensitive credentials are not included in this repository.
+
+Please use environment variables (`.env`) to securely manage secrets.
+
+
+
+## 📚 Key Learnings
+
+Through this project, I gained hands-on experience with:
+
+* Retrieval-Augmented Generation (RAG)
+* Vector databases and semantic search
+* LangChain's modern architecture
+* Streamlit application development
+* Integrating Groq-hosted LLMs
+* Building end-to-end Generative AI applications
+
+
+## 🔮 Future Improvements
+
+* Support PDF and document uploads
+* Add conversational memory
+* Deploy using Streamlit Cloud, Render, or Hugging Face Spaces
+* Integrate additional LLM providers
+* Improve UI/UX and error handling
+
+
+
+## 🤝 Contributing
+
+Contributions, suggestions, and improvements are welcome.
+
+Feel free to open an issue or submit a pull request.
+
+
+
+## ⭐ If you found this project interesting, please consider giving it a star!
+
+### Connect with Me
+
+If you'd like to discuss this project or collaborate on AI projects, feel free to connect with me on LinkedIn.
+
+Happy Coding! 🚀
