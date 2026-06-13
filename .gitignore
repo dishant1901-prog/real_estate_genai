@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+
+# Environment variables and API keys
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Chroma vector database
+resources/vectorstore/
+
+# IDE settings (optional)
+.idea/
+
+# OS files (optional)
+.DS_Store
